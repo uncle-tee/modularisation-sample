@@ -4,6 +4,7 @@ package ng.com.dcodes.core.di
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
+import ng.com.dcodes.furnitureapp.network.di.NetworkModule
 import ng.com.dcodes.mobile.common.di.CommonModule
 //import ng.com.dcodes.common.di.CommonModule
 //import ng.com.dcodes.domain.conf.FurnitureDatabase
@@ -16,8 +17,8 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [
-    CommonModule::class
-//    NetworkModule::class,
+    CommonModule::class,
+    NetworkModule::class
 //    DomainModule::class
 ])
 interface CoreComponent{

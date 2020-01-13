@@ -4,8 +4,13 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
-def timber_version = "4.7.1"
+
+def moshi_version = "1.8.0"
+def retrofit_version = "2.6.0"
+
+def okhttp3_version = "3.8.1"
 def dagger_version = "2.23.2"
+
 
 android {
     compileSdkVersion 29
@@ -34,17 +39,23 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+
+
     implementation project(":common")
-    implementation project(":network")
 
+    implementation project(":shared")
 
-    //Loger
-    implementation "com.jakewharton.timber:timber:$timber_version"
+    implementation "com.squareup.moshi:moshi:$moshi_version"
+    kapt "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version"
 
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
 
-    //Dagger
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp3_version"
+
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.1.0'
