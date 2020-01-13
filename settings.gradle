@@ -1,2 +1,2 @@
-include ':app', ':core', ':common', ':network', ':shared'
+include ':app', ':core', ':common', ':network', ':shared', ':domain'
 rootProject.name='Furniture App'
