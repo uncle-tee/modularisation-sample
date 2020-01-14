@@ -26,13 +26,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-//    Internal Components
-     implementation project(":core")
+//    Internal Features
+    implementation project(":core")
+    implementation project(":features:home")
+    implementation project(":features:wishlist")
 
 //    Navigation Components
 

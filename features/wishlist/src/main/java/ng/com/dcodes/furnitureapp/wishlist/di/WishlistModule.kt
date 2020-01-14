@@ -1,19 +1,19 @@
-package ng.com.dcodes.furnitureapp.home.di
+package ng.com.dcodes.furnitureapp.wishlist.di
 
-import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.Module
-import dagger.Provides
 import dagger.multibindings.IntoMap
-import ng.com.dcodes.home.viewmodel.HomeViewModel
+import ng.com.dcodes.furnitureapp.wishlist.viewmodel.WishListViewModel
 import ng.com.dcodes.mobile.common.utils.ViewModelFactory
 import ng.com.dcodes.mobile.common.utils.di.ViewModelKey
 
 
+
 @Module
-abstract class HomeModule{
+abstract class WishlistModule {
+
 
 
     @Binds
@@ -21,9 +21,6 @@ abstract class HomeModule{
 
     @Binds
     @IntoMap
-    @ViewModelKey(HomeViewModel::class)
-    abstract fun bindHomeViewModel(viewModel: HomeViewModel): ViewModel
-
-
-
+    @ViewModelKey(WishListViewModel::class)
+    abstract fun bindHomeViewModel(viewModel: WishListViewModel): ViewModel
 }

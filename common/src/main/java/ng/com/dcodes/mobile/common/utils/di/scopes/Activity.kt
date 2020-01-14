@@ -1,9 +1,11 @@
 package ng.com.dcodes.mobile.common.utils.di.scopes
 
 import javax.inject.Qualifier
+import javax.inject.Scope
 
 
-@Qualifier
-@kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
+@Scope
+@Retention(AnnotationRetention.RUNTIME)
+@MustBeDocumented
 annotation class Activity {
 }

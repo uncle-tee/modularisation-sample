@@ -6,8 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
-import ng.com.dcodes.domain.dao.UserDao
-import ng.com.dcodes.domain.entities.User
+import ng.com.dcodes.furnitureapp.domain.dao.UserDao
 import javax.inject.Inject
 
 

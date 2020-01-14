@@ -11,19 +11,12 @@ import android.widget.TextView
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import ng.com.dcodes.common.viewmodelUtils.ViewModelFactory
-import ng.com.dcodes.core.FunitureApp
-import ng.com.dcodes.domain.conf.FurnitureDatabase
-import ng.com.dcodes.domain.dao.UserDao
-
-
-import ng.com.dcodes.home.R
-import ng.com.dcodes.home.databinding.FragmentHomeBinding
-import ng.com.dcodes.home.di.DaggerHomeComponent
+import ng.com.dcodes.furnitureapp.core.FurnitureApp
+import ng.com.dcodes.furnitureapp.home.R
+import ng.com.dcodes.furnitureapp.home.databinding.FragmentHomeBinding
+import ng.com.dcodes.furnitureapp.home.di.DaggerHomeComponent
 import ng.com.dcodes.home.viewmodel.HomeViewModel
-import ng.com.dcodes.network.Catalogue.CatalogueRemote
-import ng.com.dcodes.network.Catalogue.CatalogueRemoteImpl
-import ng.com.dcodes.network.Catalogue.CatalogueRemoteImpl_Factory
+
 
 import javax.inject.Inject
 
@@ -46,7 +39,8 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-       val binding: FragmentHomeBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_home, container, false )
+       val binding: FragmentHomeBinding = DataBindingUtil.inflate(inflater,
+           R.layout.fragment_home, container, false )
         binding.lifecycleOwner = this
         binding.data = homeViewModel
         return binding.root
@@ -57,7 +51,7 @@ class HomeFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        val coreComponent = (activity!!.applicationContext as FunitureApp).coreComponent
+        val coreComponent = (activity!!.applicationContext as FurnitureApp).coreComponent
 
         DaggerHomeComponent.factory()
             .create(coreComponent)
